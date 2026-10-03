@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tfplan
+tfplan
+planlens-report.html
+.DS_Store
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+*.tgz
+report.html

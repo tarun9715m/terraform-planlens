@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>planlens</title>
+<script type="module" src="./main.ts"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="appbar">
+    <div class="brand"><span class="wordmark">planlens</span><span class="ver" id="ver"></span></div>
+    <div class="source" id="source"></div>
+    <div class="actions">
+      <button class="btn primary" id="openBtn" type="button">Open plan JSON</button>
+      <button class="btn" id="copyBtn" type="button" hidden>Copy summary</button>
+      <div class="sgc theme" id="themeCtl" role="group" aria-label="Color theme">
+        <button type="button" data-act="theme" data-v="auto" aria-pressed="true" aria-label="Match system theme" title="Match system"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="8" cy="8" r="5.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 2.4a5.6 5.6 0 0 1 0 11.2z" fill="currentColor"/></svg></button>
+        <button type="button" data-act="theme" data-v="light" aria-pressed="false" aria-label="Light theme" title="Light"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.4v1.7M8 12.9v1.7M1.4 8h1.7M12.9 8h1.7M3.3 3.3l1.2 1.2M11.5 11.5l1.2 1.2M3.3 12.7l1.2-1.2M11.5 4.5l1.2-1.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <button type="button" data-act="theme" data-v="dark" aria-pressed="false" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M13.3 10.2A5.7 5.7 0 0 1 5.8 2.7a5.7 5.7 0 1 0 7.5 7.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+      </div>
+      <input type="file" id="file" accept=".json,application/json" hidden>
+    </div>
+  </header>
+  <section class="start" id="start" hidden>
+    <h1>Open a Terraform plan</h1>
+    <p>In your Terraform directory, run <code>terraform plan -out=tfplan</code>, then <code>planlens tfplan</code>. Or drop a plan JSON file anywhere on this page. Create one with <code>terraform show -json tfplan &gt; plan.json</code>.</p>
+    <p>The file is read in this browser tab and never uploaded.</p>
+  </section>
+  <p class="note-bar" id="note" hidden></p>
+  <div class="flags" id="flags" hidden></div>
+  <p class="err" id="err" role="alert" hidden></p>
+  <div id="copyHost"></div>
+  <div id="planView" hidden>
+    <section class="summary" id="summary" aria-label="Plan summary"></section>
+    <section class="insights" id="insights"></section>
+    <section class="workspace">
+      <aside class="nav" id="nav" aria-label="Resources">
+        <div class="nav-top">
+          <div class="search-wrap">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10.5 10.5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <input class="search" id="q" type="search" placeholder="Filter by address or attribute" aria-label="Filter resources by address or attribute" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="progress" id="progress"></div>
+        </div>
+        <section class="tree-box" aria-labelledby="treeTitle">
+          <div class="tree-head"><span id="treeTitle">Resources by module</span><button type="button" class="lk" id="treeToggle" aria-expanded="true" aria-controls="tree">Hide</button></div>
+          <div class="tree" id="tree"></div>
+        </section>
+        <div class="nav-keys" aria-label="Keyboard shortcuts">
+          <span class="kh"><kbd>/</kbd>Filter</span>
+          <span class="kh"><kbd>o</kbd>Open or close</span>
+          <span class="kh"><span class="kk"><kbd>j</kbd><kbd>k</kbd></span>Next / previous</span>
+          <span class="kh"><kbd>x</kbd>Mark reviewed</span>
+          <span class="kh"><kbd>u</kbd>Show unchanged</span>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="tabs" id="tabs" role="tablist" aria-label="Plan sections"></div>
+        <div class="toolbar" id="toolbar"></div>
+        <div class="list" id="list"></div>
+      </main>
+    </section>
+  </div>
+  <div class="drop" id="drop" hidden>Drop plan.json to open it.<br>It's read in this tab and never uploaded.</div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="tip" id="tip" hidden></div>
+</div>
+</body>
+</html>

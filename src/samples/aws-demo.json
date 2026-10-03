@@ -1,0 +1,2797 @@
+{
+ "format_version": "1.2",
+ "terraform_version": "1.16.4",
+ "timestamp": "2026-10-03T09:41:07Z",
+ "applyable": true,
+ "complete": true,
+ "errored": false,
+ "resource_drift": [
+  {
+   "address": "aws_security_group.web",
+   "mode": "managed",
+   "type": "aws_security_group",
+   "name": "web",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0a1b2c3d4e5f60718",
+     "description": "Web tier",
+     "egress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 0,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "-1",
+       "security_groups": [],
+       "self": false,
+       "to_port": 0
+      }
+     ],
+     "id": "sg-0a1b2c3d4e5f60718",
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTP",
+       "from_port": 80,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 80
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTPS",
+       "from_port": 443,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 443
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "SSH",
+       "from_port": 22,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 22
+      }
+     ],
+     "name": "acme-prod-web",
+     "name_prefix": "",
+     "owner_id": "123456789012",
+     "revoke_rules_on_delete": false,
+     "tags": {
+      "Name": "acme-prod-web"
+     },
+     "tags_all": {
+      "Name": "acme-prod-web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null,
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0a1b2c3d4e5f60718",
+     "description": "Web tier",
+     "egress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 0,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "-1",
+       "security_groups": [],
+       "self": false,
+       "to_port": 0
+      }
+     ],
+     "id": "sg-0a1b2c3d4e5f60718",
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTP",
+       "from_port": 80,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 80
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTPS",
+       "from_port": 443,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 443
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "SSH",
+       "from_port": 22,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 22
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 3389,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 3389
+      }
+     ],
+     "name": "acme-prod-web",
+     "name_prefix": "",
+     "owner_id": "123456789012",
+     "revoke_rules_on_delete": false,
+     "tags": {
+      "Name": "acme-prod-web"
+     },
+     "tags_all": {
+      "Name": "acme-prod-web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null,
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_cloudwatch_log_group.api",
+   "mode": "managed",
+   "type": "aws_cloudwatch_log_group",
+   "name": "api",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/acme-core-api",
+     "id": "/aws/lambda/acme-core-api",
+     "kms_key_id": "",
+     "log_group_class": "STANDARD",
+     "name": "/aws/lambda/acme-core-api",
+     "name_prefix": "",
+     "retention_in_days": 7,
+     "skip_destroy": false,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": {
+     "arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/acme-core-api",
+     "id": "/aws/lambda/acme-core-api",
+     "kms_key_id": "",
+     "log_group_class": "STANDARD",
+     "name": "/aws/lambda/acme-core-api",
+     "name_prefix": "",
+     "retention_in_days": 14,
+     "skip_destroy": false,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_cloudwatch_metric_alarm.db_cpu",
+   "mode": "managed",
+   "type": "aws_cloudwatch_metric_alarm",
+   "name": "db_cpu",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:cloudwatch:us-east-1:123456789012:alarm:acme-prod-db-cpu-high",
+     "id": "acme-prod-db-cpu-high",
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "actions_enabled": true,
+     "alarm_actions": [
+      "arn:aws:sns:us-east-1:123456789012:oncall"
+     ],
+     "alarm_description": "Database CPU above 80% for 15 minutes",
+     "alarm_name": "acme-prod-db-cpu-high",
+     "comparison_operator": "GreaterThanThreshold",
+     "datapoints_to_alarm": null,
+     "dimensions": {
+      "DBInstanceIdentifier": "acme-prod-db"
+     },
+     "evaluation_periods": 3,
+     "metric_name": "CPUUtilization",
+     "namespace": "AWS/RDS",
+     "ok_actions": [],
+     "period": 300,
+     "statistic": "Average",
+     "tags": {},
+     "threshold": 80,
+     "treat_missing_data": "missing"
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   }
+  }
+ ],
+ "resource_changes": [
+  {
+   "address": "aws_cloudwatch_log_group.api",
+   "mode": "managed",
+   "type": "aws_cloudwatch_log_group",
+   "name": "api",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/acme-core-api",
+     "id": "/aws/lambda/acme-core-api",
+     "kms_key_id": "",
+     "log_group_class": "STANDARD",
+     "name": "/aws/lambda/acme-core-api",
+     "name_prefix": "",
+     "retention_in_days": 14,
+     "skip_destroy": false,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": {
+     "arn": "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/acme-core-api",
+     "id": "/aws/lambda/acme-core-api",
+     "kms_key_id": "",
+     "log_group_class": "STANDARD",
+     "name": "/aws/lambda/acme-core-api",
+     "name_prefix": "",
+     "retention_in_days": 30,
+     "skip_destroy": false,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_cloudwatch_metric_alarm.db_cpu",
+   "mode": "managed",
+   "type": "aws_cloudwatch_metric_alarm",
+   "name": "db_cpu",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "actions_enabled": true,
+     "alarm_actions": [
+      "arn:aws:sns:us-east-1:123456789012:oncall"
+     ],
+     "alarm_description": "Database CPU above 80% for 15 minutes",
+     "alarm_name": "acme-prod-db-cpu-high",
+     "comparison_operator": "GreaterThanThreshold",
+     "datapoints_to_alarm": null,
+     "dimensions": {
+      "DBInstanceIdentifier": "acme-prod-db"
+     },
+     "evaluation_periods": 3,
+     "metric_name": "CPUUtilization",
+     "namespace": "AWS/RDS",
+     "ok_actions": [],
+     "period": 300,
+     "statistic": "Average",
+     "tags": {},
+     "threshold": 80,
+     "treat_missing_data": "missing"
+    },
+    "after_unknown": {
+     "arn": true,
+     "id": true,
+     "tags_all": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_db_instance.primary",
+   "mode": "managed",
+   "type": "aws_db_instance",
+   "name": "primary",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete",
+     "create"
+    ],
+    "before": {
+     "address": "acme-prod-db.c9akciq32xyz.us-east-1.rds.amazonaws.com",
+     "allocated_storage": 200,
+     "allow_major_version_upgrade": null,
+     "apply_immediately": false,
+     "arn": "arn:aws:rds:us-east-1:123456789012:db:acme-prod-db",
+     "auto_minor_version_upgrade": true,
+     "availability_zone": "us-east-1a",
+     "backup_retention_period": 7,
+     "backup_window": "03:00-04:00",
+     "ca_cert_identifier": "rds-ca-rsa2048-g1",
+     "copy_tags_to_snapshot": true,
+     "db_name": "acme",
+     "db_subnet_group_name": "acme-prod-db",
+     "deletion_protection": false,
+     "endpoint": "acme-prod-db.c9akciq32xyz.us-east-1.rds.amazonaws.com:5432",
+     "engine": "postgres",
+     "engine_version": "16.4",
+     "final_snapshot_identifier": null,
+     "hosted_zone_id": "Z2R2ITUGPM61AM",
+     "iam_database_authentication_enabled": false,
+     "id": "db-7QXKFDBN2ZQWERT5Y3EXAMPLE",
+     "identifier": "acme-prod-db",
+     "instance_class": "db.r6g.large",
+     "iops": 3000,
+     "kms_key_id": "",
+     "maintenance_window": "sun:05:00-sun:06:00",
+     "multi_az": true,
+     "password": "correct-horse-battery-staple",
+     "port": 5432,
+     "publicly_accessible": false,
+     "resource_id": "db-7QXKFDBN2ZQWERT5Y3EXAMPLE",
+     "skip_final_snapshot": true,
+     "status": "available",
+     "storage_encrypted": false,
+     "storage_type": "gp3",
+     "tags": {
+      "Environment": "prod",
+      "Service": "core-api"
+     },
+     "tags_all": {
+      "Environment": "prod",
+      "Service": "core-api",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "username": "acme_admin",
+     "vpc_security_group_ids": [
+      "sg-0d4e5f60718293a4b"
+     ]
+    },
+    "after": {
+     "allocated_storage": 200,
+     "allow_major_version_upgrade": null,
+     "apply_immediately": false,
+     "auto_minor_version_upgrade": true,
+     "backup_retention_period": 7,
+     "backup_window": "03:00-04:00",
+     "ca_cert_identifier": "rds-ca-rsa2048-g1",
+     "copy_tags_to_snapshot": true,
+     "db_name": "acme",
+     "db_subnet_group_name": "acme-prod-db",
+     "deletion_protection": false,
+     "engine": "postgres",
+     "engine_version": "16.4",
+     "final_snapshot_identifier": null,
+     "iam_database_authentication_enabled": false,
+     "identifier": "acme-prod-db",
+     "instance_class": "db.r6g.large",
+     "iops": 3000,
+     "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/2f1c9e7a-4b3d-4e8f-9a1b-6c5d4e3f2a10",
+     "maintenance_window": "sun:05:00-sun:06:00",
+     "multi_az": true,
+     "password": "correct-horse-battery-staple",
+     "port": 5432,
+     "publicly_accessible": false,
+     "skip_final_snapshot": true,
+     "storage_encrypted": true,
+     "storage_type": "gp3",
+     "tags": {
+      "Environment": "prod",
+      "Service": "core-api"
+     },
+     "tags_all": {
+      "Environment": "prod",
+      "Service": "core-api",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "username": "acme_admin",
+     "vpc_security_group_ids": [
+      "sg-0d4e5f60718293a4b"
+     ]
+    },
+    "after_unknown": {
+     "address": true,
+     "arn": true,
+     "availability_zone": true,
+     "endpoint": true,
+     "hosted_zone_id": true,
+     "id": true,
+     "resource_id": true,
+     "status": true
+    },
+    "before_sensitive": {
+     "password": true
+    },
+    "after_sensitive": {
+     "password": true
+    },
+    "replace_paths": [
+     [
+      "kms_key_id"
+     ],
+     [
+      "storage_encrypted"
+     ]
+    ]
+   },
+   "action_reason": "replace_because_cannot_update"
+  },
+  {
+   "address": "aws_elasticache_cluster.sessions",
+   "mode": "managed",
+   "type": "aws_elasticache_cluster",
+   "name": "sessions",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "apply_immediately": null,
+     "arn": "arn:aws:elasticache:us-east-1:123456789012:cluster:acme-sessions",
+     "az_mode": "single-az",
+     "cache_nodes": [
+      {
+       "address": "acme-sessions.x1y2z3.0001.use1.cache.amazonaws.com",
+       "availability_zone": "us-east-1a",
+       "id": "0001",
+       "port": 6379
+      }
+     ],
+     "cluster_id": "acme-sessions",
+     "engine": "redis",
+     "engine_version": "7.1",
+     "final_snapshot_identifier": null,
+     "id": "acme-sessions",
+     "node_type": "cache.t4g.small",
+     "num_cache_nodes": 1,
+     "parameter_group_name": "default.redis7",
+     "port": 6379,
+     "snapshot_retention_limit": 0,
+     "subnet_group_name": "acme-prod-cache",
+     "tags": {
+      "Service": "sessions"
+     },
+     "tags_all": {
+      "Service": "sessions",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_no_resource_config"
+  },
+  {
+   "address": "aws_iam_policy.deploy",
+   "mode": "managed",
+   "type": "aws_iam_policy",
+   "name": "deploy",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:iam::123456789012:policy/acme-deploy",
+     "attachment_count": 1,
+     "description": "Deploy pipeline access",
+     "id": "arn:aws:iam::123456789012:policy/acme-deploy",
+     "name": "acme-deploy",
+     "name_prefix": "",
+     "path": "/",
+     "policy": "{\"Statement\":[{\"Action\":[\"s3:GetObject\",\"s3:PutObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::acme-prod-artifacts/*\",\"Sid\":\"Artifacts\"}],\"Version\":\"2012-10-17\"}",
+     "policy_id": "ANPA4EXAMPLE7QKZ2XJ3B",
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": {
+     "arn": "arn:aws:iam::123456789012:policy/acme-deploy",
+     "attachment_count": 1,
+     "description": "Deploy pipeline access",
+     "id": "arn:aws:iam::123456789012:policy/acme-deploy",
+     "name": "acme-deploy",
+     "name_prefix": "",
+     "path": "/",
+     "policy": "{\"Statement\":[{\"Action\":[\"s3:DeleteObject\",\"s3:GetObject\",\"s3:PutObject\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:s3:::acme-prod-artifacts/*\",\"Sid\":\"Artifacts\"},{\"Action\":\"kms:Decrypt\",\"Effect\":\"Allow\",\"Resource\":\"arn:aws:kms:us-east-1:123456789012:key/2f1c9e7a-4b3d-4e8f-9a1b-6c5d4e3f2a10\",\"Sid\":\"DecryptArtifacts\"}],\"Version\":\"2012-10-17\"}",
+     "policy_id": "ANPA4EXAMPLE7QKZ2XJ3B",
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_instance.web[0]",
+   "mode": "managed",
+   "type": "aws_instance",
+   "name": "web",
+   "index": 0,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create",
+     "delete"
+    ],
+    "before": {
+     "ami": "ami-0a5c3558529277641",
+     "arn": "arn:aws:ec2:us-east-1:123456789012:instance/i-0f3a9c1e2b4d5a607",
+     "associate_public_ip_address": false,
+     "availability_zone": "us-east-1a",
+     "disable_api_termination": false,
+     "ebs_optimized": true,
+     "iam_instance_profile": "acme-web",
+     "id": "i-0f3a9c1e2b4d5a607",
+     "instance_type": "t3.large",
+     "key_name": null,
+     "metadata_options": [
+      {
+       "http_endpoint": "enabled",
+       "http_put_response_hop_limit": 1,
+       "http_tokens": "required",
+       "instance_metadata_tags": "disabled"
+      }
+     ],
+     "monitoring": true,
+     "primary_network_interface_id": "eni-0a1b2c3d4e5f60711",
+     "private_dns": "ip-10-20-1-14.ec2.internal",
+     "private_ip": "10.20.1.14",
+     "public_ip": "",
+     "root_block_device": [
+      {
+       "delete_on_termination": true,
+       "encrypted": true,
+       "iops": 3000,
+       "throughput": 125,
+       "volume_id": "vol-0123456789abcdef0",
+       "volume_size": 30,
+       "volume_type": "gp3"
+      }
+     ],
+     "subnet_id": "subnet-0aa1b2c3d4e5f6071",
+     "tags": {
+      "Name": "acme-web-0",
+      "Role": "web"
+     },
+     "tags_all": {
+      "Name": "acme-web-0",
+      "Role": "web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "user_data": "3f8a1c0e9b7d6a5f4e3d2c1b0a9f8e7d6c5b4a39",
+     "user_data_replace_on_change": false,
+     "vpc_security_group_ids": [
+      "sg-0a1b2c3d4e5f60718"
+     ]
+    },
+    "after": {
+     "ami": "ami-0e2c8caa4b6378d8c",
+     "associate_public_ip_address": false,
+     "disable_api_termination": false,
+     "ebs_optimized": true,
+     "iam_instance_profile": "acme-web",
+     "instance_type": "t3.large",
+     "key_name": null,
+     "metadata_options": [
+      {
+       "http_endpoint": "enabled",
+       "http_put_response_hop_limit": 1,
+       "http_tokens": "required",
+       "instance_metadata_tags": "disabled"
+      }
+     ],
+     "monitoring": true,
+     "root_block_device": [
+      {
+       "delete_on_termination": true,
+       "encrypted": true,
+       "iops": 3000,
+       "throughput": 125,
+       "volume_size": 30,
+       "volume_type": "gp3"
+      }
+     ],
+     "subnet_id": "subnet-0aa1b2c3d4e5f6071",
+     "tags": {
+      "Name": "acme-web-0",
+      "Role": "web"
+     },
+     "tags_all": {
+      "Name": "acme-web-0",
+      "Role": "web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "user_data": "3f8a1c0e9b7d6a5f4e3d2c1b0a9f8e7d6c5b4a39",
+     "user_data_replace_on_change": false,
+     "vpc_security_group_ids": [
+      "sg-0a1b2c3d4e5f60718"
+     ]
+    },
+    "after_unknown": {
+     "arn": true,
+     "availability_zone": true,
+     "id": true,
+     "primary_network_interface_id": true,
+     "private_dns": true,
+     "private_ip": true,
+     "public_ip": true,
+     "root_block_device": [
+      {
+       "volume_id": true
+      }
+     ]
+    },
+    "before_sensitive": {},
+    "after_sensitive": {},
+    "replace_paths": [
+     [
+      "ami"
+     ]
+    ]
+   },
+   "action_reason": "replace_because_cannot_update"
+  },
+  {
+   "address": "aws_instance.web[1]",
+   "mode": "managed",
+   "type": "aws_instance",
+   "name": "web",
+   "index": 1,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create",
+     "delete"
+    ],
+    "before": {
+     "ami": "ami-0a5c3558529277641",
+     "arn": "arn:aws:ec2:us-east-1:123456789012:instance/i-0b7e1d2c3a4f5e698",
+     "associate_public_ip_address": false,
+     "availability_zone": "us-east-1b",
+     "disable_api_termination": false,
+     "ebs_optimized": true,
+     "iam_instance_profile": "acme-web",
+     "id": "i-0b7e1d2c3a4f5e698",
+     "instance_type": "t3.large",
+     "key_name": null,
+     "metadata_options": [
+      {
+       "http_endpoint": "enabled",
+       "http_put_response_hop_limit": 1,
+       "http_tokens": "required",
+       "instance_metadata_tags": "disabled"
+      }
+     ],
+     "monitoring": true,
+     "primary_network_interface_id": "eni-0b2c3d4e5f6071822",
+     "private_dns": "ip-10-20-2-27.ec2.internal",
+     "private_ip": "10.20.2.27",
+     "public_ip": "",
+     "root_block_device": [
+      {
+       "delete_on_termination": true,
+       "encrypted": true,
+       "iops": 3000,
+       "throughput": 125,
+       "volume_id": "vol-0fedcba9876543210",
+       "volume_size": 30,
+       "volume_type": "gp3"
+      }
+     ],
+     "subnet_id": "subnet-0bb2c3d4e5f607182",
+     "tags": {
+      "Name": "acme-web-1",
+      "Role": "web"
+     },
+     "tags_all": {
+      "Name": "acme-web-1",
+      "Role": "web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "user_data": "3f8a1c0e9b7d6a5f4e3d2c1b0a9f8e7d6c5b4a39",
+     "user_data_replace_on_change": false,
+     "vpc_security_group_ids": [
+      "sg-0a1b2c3d4e5f60718"
+     ]
+    },
+    "after": {
+     "ami": "ami-0e2c8caa4b6378d8c",
+     "associate_public_ip_address": false,
+     "disable_api_termination": false,
+     "ebs_optimized": true,
+     "iam_instance_profile": "acme-web",
+     "instance_type": "t3.large",
+     "key_name": null,
+     "metadata_options": [
+      {
+       "http_endpoint": "enabled",
+       "http_put_response_hop_limit": 1,
+       "http_tokens": "required",
+       "instance_metadata_tags": "disabled"
+      }
+     ],
+     "monitoring": true,
+     "root_block_device": [
+      {
+       "delete_on_termination": true,
+       "encrypted": true,
+       "iops": 3000,
+       "throughput": 125,
+       "volume_size": 30,
+       "volume_type": "gp3"
+      }
+     ],
+     "subnet_id": "subnet-0bb2c3d4e5f607182",
+     "tags": {
+      "Name": "acme-web-1",
+      "Role": "web"
+     },
+     "tags_all": {
+      "Name": "acme-web-1",
+      "Role": "web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "user_data": "3f8a1c0e9b7d6a5f4e3d2c1b0a9f8e7d6c5b4a39",
+     "user_data_replace_on_change": false,
+     "vpc_security_group_ids": [
+      "sg-0a1b2c3d4e5f60718"
+     ]
+    },
+    "after_unknown": {
+     "arn": true,
+     "availability_zone": true,
+     "id": true,
+     "primary_network_interface_id": true,
+     "private_dns": true,
+     "private_ip": true,
+     "public_ip": true,
+     "root_block_device": [
+      {
+       "volume_id": true
+      }
+     ]
+    },
+    "before_sensitive": {},
+    "after_sensitive": {},
+    "replace_paths": [
+     [
+      "ami"
+     ]
+    ]
+   },
+   "action_reason": "replace_because_cannot_update"
+  },
+  {
+   "address": "aws_instance.web[2]",
+   "mode": "managed",
+   "type": "aws_instance",
+   "name": "web",
+   "index": 2,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "ami": "ami-0a5c3558529277641",
+     "arn": "arn:aws:ec2:us-east-1:123456789012:instance/i-0c4d5e6f7a8b9c0d1",
+     "associate_public_ip_address": false,
+     "availability_zone": "us-east-1a",
+     "disable_api_termination": false,
+     "ebs_optimized": true,
+     "iam_instance_profile": "acme-web",
+     "id": "i-0c4d5e6f7a8b9c0d1",
+     "instance_type": "t3.large",
+     "key_name": null,
+     "metadata_options": [
+      {
+       "http_endpoint": "enabled",
+       "http_put_response_hop_limit": 1,
+       "http_tokens": "required",
+       "instance_metadata_tags": "disabled"
+      }
+     ],
+     "monitoring": true,
+     "primary_network_interface_id": "eni-0c3d4e5f607182933",
+     "private_dns": "ip-10-20-1-61.ec2.internal",
+     "private_ip": "10.20.1.61",
+     "public_ip": "",
+     "root_block_device": [
+      {
+       "delete_on_termination": true,
+       "encrypted": true,
+       "iops": 3000,
+       "throughput": 125,
+       "volume_id": "vol-0a1b2c3d4e5f67890",
+       "volume_size": 30,
+       "volume_type": "gp3"
+      }
+     ],
+     "subnet_id": "subnet-0aa1b2c3d4e5f6071",
+     "tags": {
+      "Name": "acme-web-2",
+      "Role": "web"
+     },
+     "tags_all": {
+      "Name": "acme-web-2",
+      "Role": "web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "user_data": "3f8a1c0e9b7d6a5f4e3d2c1b0a9f8e7d6c5b4a39",
+     "user_data_replace_on_change": false,
+     "vpc_security_group_ids": [
+      "sg-0a1b2c3d4e5f60718"
+     ]
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_count_index"
+  },
+  {
+   "address": "aws_kms_key.legacy",
+   "mode": "managed",
+   "type": "aws_kms_key",
+   "name": "legacy",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "forget"
+    ],
+    "before": {
+     "arn": "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+     "customer_master_key_spec": "SYMMETRIC_DEFAULT",
+     "deletion_window_in_days": 30,
+     "description": "Legacy app key",
+     "enable_key_rotation": true,
+     "id": "1234abcd-12ab-34cd-56ef-1234567890ab",
+     "is_enabled": true,
+     "key_id": "1234abcd-12ab-34cd-56ef-1234567890ab",
+     "key_usage": "ENCRYPT_DECRYPT",
+     "multi_region": false,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_no_resource_config"
+  },
+  {
+   "address": "aws_lambda_function.api",
+   "mode": "managed",
+   "type": "aws_lambda_function",
+   "name": "api",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "architectures": [
+      "arm64"
+     ],
+     "arn": "arn:aws:lambda:us-east-1:123456789012:function:acme-core-api",
+     "description": "Core API",
+     "environment": [
+      {
+       "variables": {
+        "DATABASE_HOST": "acme-prod-db.c9akciq32xyz.us-east-1.rds.amazonaws.com",
+        "LOG_LEVEL": "info",
+        "SESSION_SECRET": "s3ss10n-demo-1c9e7a2f"
+       }
+      }
+     ],
+     "function_name": "acme-core-api",
+     "handler": "bootstrap",
+     "id": "acme-core-api",
+     "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:123456789012:function:acme-core-api/invocations",
+     "last_modified": "2026-09-12T08:41:17.000+0000",
+     "layers": [],
+     "memory_size": 512,
+     "package_type": "Zip",
+     "publish": false,
+     "qualified_arn": "arn:aws:lambda:us-east-1:123456789012:function:acme-core-api:$LATEST",
+     "reserved_concurrent_executions": -1,
+     "role": "arn:aws:iam::123456789012:role/acme-core-api",
+     "runtime": "provided.al2023",
+     "source_code_hash": "kY3n4Fv0q1mXqv0yZ3gT1m8l2u8c6f8H2a3t5qvZ0bE=",
+     "source_code_size": 8123456,
+     "tags": {
+      "Service": "core-api"
+     },
+     "tags_all": {
+      "Service": "core-api",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeout": 15,
+     "tracing_config": [
+      {
+       "mode": "PassThrough"
+      }
+     ],
+     "version": "$LATEST"
+    },
+    "after": {
+     "architectures": [
+      "arm64"
+     ],
+     "arn": "arn:aws:lambda:us-east-1:123456789012:function:acme-core-api",
+     "description": "Core API",
+     "environment": [
+      {
+       "variables": {
+        "FEATURE_FLAGS": "checkout-v2,fast-search",
+        "LOG_LEVEL": "warn",
+        "SESSION_SECRET": "s3ss10n-demo-8b2d4f6a"
+       }
+      }
+     ],
+     "function_name": "acme-core-api",
+     "handler": "bootstrap",
+     "id": "acme-core-api",
+     "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:123456789012:function:acme-core-api/invocations",
+     "layers": [],
+     "memory_size": 1024,
+     "package_type": "Zip",
+     "publish": false,
+     "qualified_arn": "arn:aws:lambda:us-east-1:123456789012:function:acme-core-api:$LATEST",
+     "reserved_concurrent_executions": -1,
+     "role": "arn:aws:iam::123456789012:role/acme-core-api",
+     "runtime": "provided.al2023",
+     "source_code_hash": "m3Qv9TzK1xW7bL0cR5nY8uE2hA6sD4fG1jP0oI9kZ2c=",
+     "source_code_size": 8123456,
+     "tags": {
+      "Service": "core-api"
+     },
+     "tags_all": {
+      "Service": "core-api",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeout": 30,
+     "tracing_config": [
+      {
+       "mode": "PassThrough"
+      }
+     ],
+     "version": "$LATEST"
+    },
+    "after_unknown": {
+     "environment": [
+      {
+       "variables": {
+        "DATABASE_HOST": true
+       }
+      }
+     ],
+     "last_modified": true
+    },
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_route53_zone.main",
+   "mode": "managed",
+   "type": "aws_route53_zone",
+   "name": "main",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "no-op"
+    ],
+    "before": {
+     "arn": "arn:aws:route53:::hostedzone/Z04573821B7XQ1EXAMPLE",
+     "comment": "Managed by Terraform",
+     "delegation_set_id": "",
+     "force_destroy": false,
+     "id": "Z04573821B7XQ1EXAMPLE",
+     "name": "acme.example",
+     "name_servers": [
+      "ns-1234.awsdns-26.org",
+      "ns-567.awsdns-06.net",
+      "ns-1890.awsdns-44.co.uk",
+      "ns-89.awsdns-11.com"
+     ],
+     "primary_name_server": "ns-1234.awsdns-26.org",
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc": [],
+     "zone_id": "Z04573821B7XQ1EXAMPLE"
+    },
+    "after": {
+     "arn": "arn:aws:route53:::hostedzone/Z04573821B7XQ1EXAMPLE",
+     "comment": "Managed by Terraform",
+     "delegation_set_id": "",
+     "force_destroy": false,
+     "id": "Z04573821B7XQ1EXAMPLE",
+     "name": "acme.example",
+     "name_servers": [
+      "ns-1234.awsdns-26.org",
+      "ns-567.awsdns-06.net",
+      "ns-1890.awsdns-44.co.uk",
+      "ns-89.awsdns-11.com"
+     ],
+     "primary_name_server": "ns-1234.awsdns-26.org",
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc": [],
+     "zone_id": "Z04573821B7XQ1EXAMPLE"
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {},
+    "importing": {
+     "id": "Z04573821B7XQ1EXAMPLE"
+    }
+   }
+  },
+  {
+   "address": "aws_s3_bucket_versioning.logs",
+   "mode": "managed",
+   "type": "aws_s3_bucket_versioning",
+   "name": "logs",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "expected_bucket_owner": null,
+     "mfa": null,
+     "versioning_configuration": [
+      {
+       "mfa_delete": null,
+       "status": "Enabled"
+      }
+     ]
+    },
+    "after_unknown": {
+     "bucket": true,
+     "id": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_s3_bucket.assets",
+   "previous_address": "aws_s3_bucket.static_assets",
+   "mode": "managed",
+   "type": "aws_s3_bucket",
+   "name": "assets",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "no-op"
+    ],
+    "before": {
+     "arn": "arn:aws:s3:::acme-prod-static-assets",
+     "bucket": "acme-prod-static-assets",
+     "bucket_domain_name": "acme-prod-static-assets.s3.amazonaws.com",
+     "force_destroy": false,
+     "hosted_zone_id": "Z3AQBSTGFYJSTF",
+     "id": "acme-prod-static-assets",
+     "region": "us-east-1",
+     "tags": {
+      "Purpose": "static-assets"
+     },
+     "tags_all": {
+      "Purpose": "static-assets",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": {
+     "arn": "arn:aws:s3:::acme-prod-static-assets",
+     "bucket": "acme-prod-static-assets",
+     "bucket_domain_name": "acme-prod-static-assets.s3.amazonaws.com",
+     "force_destroy": false,
+     "hosted_zone_id": "Z3AQBSTGFYJSTF",
+     "id": "acme-prod-static-assets",
+     "region": "us-east-1",
+     "tags": {
+      "Purpose": "static-assets"
+     },
+     "tags_all": {
+      "Purpose": "static-assets",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_s3_bucket.logs",
+   "mode": "managed",
+   "type": "aws_s3_bucket",
+   "name": "logs",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "bucket": "acme-prod-logs-7f3a",
+     "bucket_prefix": null,
+     "force_destroy": false,
+     "object_lock_enabled": null,
+     "tags": {
+      "Environment": "prod",
+      "Purpose": "access-logs"
+     },
+     "tags_all": {
+      "Environment": "prod",
+      "Purpose": "access-logs",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null
+    },
+    "after_unknown": {
+     "acceleration_status": true,
+     "acl": true,
+     "arn": true,
+     "bucket_domain_name": true,
+     "bucket_regional_domain_name": true,
+     "cors_rule": true,
+     "grant": true,
+     "hosted_zone_id": true,
+     "id": true,
+     "lifecycle_rule": true,
+     "logging": true,
+     "object_lock_configuration": true,
+     "policy": true,
+     "region": true,
+     "replication_configuration": true,
+     "request_payer": true,
+     "server_side_encryption_configuration": true,
+     "versioning": true,
+     "website": true,
+     "website_domain": true,
+     "website_endpoint": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_s3_bucket.uploads",
+   "mode": "managed",
+   "type": "aws_s3_bucket",
+   "name": "uploads",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:s3:::acme-prod-user-uploads",
+     "bucket": "acme-prod-user-uploads",
+     "bucket_domain_name": "acme-prod-user-uploads.s3.amazonaws.com",
+     "force_destroy": false,
+     "hosted_zone_id": "Z3AQBSTGFYJSTF",
+     "id": "acme-prod-user-uploads",
+     "object_lock_enabled": false,
+     "region": "us-east-1",
+     "tags": {
+      "Purpose": "user-uploads"
+     },
+     "tags_all": {
+      "Purpose": "user-uploads",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_no_resource_config"
+  },
+  {
+   "address": "aws_s3_bucket.user_uploads",
+   "mode": "managed",
+   "type": "aws_s3_bucket",
+   "name": "user_uploads",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "bucket": "acme-prod-user-uploads",
+     "bucket_prefix": null,
+     "force_destroy": false,
+     "object_lock_enabled": false,
+     "tags": {
+      "Purpose": "user-uploads"
+     },
+     "tags_all": {
+      "Purpose": "user-uploads",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null
+    },
+    "after_unknown": {
+     "arn": true,
+     "bucket_domain_name": true,
+     "bucket_regional_domain_name": true,
+     "hosted_zone_id": true,
+     "id": true,
+     "region": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_security_group.web",
+   "mode": "managed",
+   "type": "aws_security_group",
+   "name": "web",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0a1b2c3d4e5f60718",
+     "description": "Web tier",
+     "egress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 0,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "-1",
+       "security_groups": [],
+       "self": false,
+       "to_port": 0
+      }
+     ],
+     "id": "sg-0a1b2c3d4e5f60718",
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTP",
+       "from_port": 80,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 80
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTPS",
+       "from_port": 443,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 443
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "SSH",
+       "from_port": 22,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 22
+      },
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 3389,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 3389
+      }
+     ],
+     "name": "acme-prod-web",
+     "name_prefix": "",
+     "owner_id": "123456789012",
+     "revoke_rules_on_delete": false,
+     "tags": {
+      "Name": "acme-prod-web"
+     },
+     "tags_all": {
+      "Name": "acme-prod-web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null,
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0a1b2c3d4e5f60718",
+     "description": "Web tier",
+     "egress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "",
+       "from_port": 0,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "-1",
+       "security_groups": [],
+       "self": false,
+       "to_port": 0
+      }
+     ],
+     "id": "sg-0a1b2c3d4e5f60718",
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "description": "HTTPS",
+       "from_port": 443,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 443
+      },
+      {
+       "cidr_blocks": [
+        "10.20.0.0/16"
+       ],
+       "description": "SSH",
+       "from_port": 22,
+       "ipv6_cidr_blocks": [],
+       "prefix_list_ids": [],
+       "protocol": "tcp",
+       "security_groups": [],
+       "self": false,
+       "to_port": 22
+      }
+     ],
+     "name": "acme-prod-web",
+     "name_prefix": "",
+     "owner_id": "123456789012",
+     "revoke_rules_on_delete": false,
+     "tags": {
+      "Name": "acme-prod-web"
+     },
+     "tags_all": {
+      "Name": "acme-prod-web",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "timeouts": null,
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_sns_topic.alerts[\"billing\"]",
+   "mode": "managed",
+   "type": "aws_sns_topic",
+   "name": "alerts",
+   "index": "billing",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "content_based_deduplication": false,
+     "display_name": "",
+     "fifo_topic": false,
+     "kms_master_key_id": "alias/aws/sns",
+     "name": "acme-alerts-billing",
+     "tags": {
+      "Team": "sre"
+     },
+     "tags_all": {
+      "Team": "sre",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {
+     "arn": true,
+     "id": true,
+     "owner": true,
+     "policy": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_sns_topic.alerts[\"oncall\"]",
+   "mode": "managed",
+   "type": "aws_sns_topic",
+   "name": "alerts",
+   "index": "oncall",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "content_based_deduplication": false,
+     "display_name": "",
+     "fifo_topic": false,
+     "kms_master_key_id": "alias/aws/sns",
+     "name": "acme-alerts-oncall",
+     "tags": {
+      "Team": "sre"
+     },
+     "tags_all": {
+      "Team": "sre",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {
+     "arn": true,
+     "id": true,
+     "owner": true,
+     "policy": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "aws_sns_topic.alerts[0]",
+   "mode": "managed",
+   "type": "aws_sns_topic",
+   "name": "alerts",
+   "index": 0,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:sns:us-east-1:123456789012:acme-alerts-oncall",
+     "content_based_deduplication": false,
+     "display_name": "",
+     "fifo_topic": false,
+     "id": "arn:aws:sns:us-east-1:123456789012:acme-alerts-oncall",
+     "kms_master_key_id": "alias/aws/sns",
+     "name": "acme-alerts-oncall",
+     "owner": "123456789012",
+     "tags": {
+      "Team": "sre"
+     },
+     "tags_all": {
+      "Team": "sre",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_wrong_repetition"
+  },
+  {
+   "address": "aws_sns_topic.alerts[1]",
+   "mode": "managed",
+   "type": "aws_sns_topic",
+   "name": "alerts",
+   "index": 1,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:sns:us-east-1:123456789012:acme-alerts-billing",
+     "content_based_deduplication": false,
+     "display_name": "",
+     "fifo_topic": false,
+     "id": "arn:aws:sns:us-east-1:123456789012:acme-alerts-billing",
+     "kms_master_key_id": "alias/aws/sns",
+     "name": "acme-alerts-billing",
+     "owner": "123456789012",
+     "tags": {
+      "Team": "sre"
+     },
+     "tags_all": {
+      "Team": "sre",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_wrong_repetition"
+  },
+  {
+   "address": "aws_ssm_parameter.payments_token",
+   "mode": "managed",
+   "type": "aws_ssm_parameter",
+   "name": "payments_token",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "allowed_pattern": "",
+     "arn": "arn:aws:ssm:us-east-1:123456789012:parameter/acme/prod/payments/api-token",
+     "data_type": "text",
+     "description": "Token for the payments API",
+     "id": "/acme/prod/payments/api-token",
+     "insecure_value": null,
+     "key_id": "alias/aws/ssm",
+     "name": "/acme/prod/payments/api-token",
+     "overwrite": null,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "tier": "Standard",
+     "type": "SecureString",
+     "value": "pay_tok_demo_4f7a91c2",
+     "version": 3
+    },
+    "after": {
+     "allowed_pattern": "",
+     "arn": "arn:aws:ssm:us-east-1:123456789012:parameter/acme/prod/payments/api-token",
+     "data_type": "text",
+     "description": "Token for the payments API",
+     "id": "/acme/prod/payments/api-token",
+     "insecure_value": null,
+     "key_id": "alias/aws/ssm",
+     "name": "/acme/prod/payments/api-token",
+     "overwrite": null,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "tier": "Standard",
+     "type": "SecureString",
+     "value": "pay_tok_demo_b83e0d57"
+    },
+    "after_unknown": {
+     "version": true
+    },
+    "before_sensitive": {
+     "value": true
+    },
+    "after_sensitive": {
+     "value": true
+    }
+   }
+  },
+  {
+   "address": "data.aws_instances.web",
+   "mode": "data",
+   "type": "aws_instances",
+   "name": "web",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "read"
+    ],
+    "before": null,
+    "after": {
+     "filter": [
+      {
+       "name": "tag:Role",
+       "values": [
+        "web"
+       ]
+      }
+     ],
+     "instance_state_names": [
+      "running"
+     ],
+     "instance_tags": null,
+     "timeouts": null
+    },
+    "after_unknown": {
+     "id": true,
+     "ids": true,
+     "ipv6_addresses": true,
+     "private_ips": true,
+     "public_ips": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   },
+   "action_reason": "read_because_dependency_pending"
+  },
+  {
+   "address": "helm_release.ingress_nginx",
+   "mode": "managed",
+   "type": "helm_release",
+   "name": "ingress_nginx",
+   "provider_name": "registry.terraform.io/hashicorp/helm",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "atomic": true,
+     "chart": "ingress-nginx",
+     "cleanup_on_fail": true,
+     "create_namespace": true,
+     "id": "ingress-nginx",
+     "metadata": [
+      {
+       "app_version": "1.10.1",
+       "chart": "ingress-nginx",
+       "name": "ingress-nginx",
+       "namespace": "ingress-nginx",
+       "revision": 14,
+       "version": "4.10.1"
+      }
+     ],
+     "name": "ingress-nginx",
+     "namespace": "ingress-nginx",
+     "repository": "https://kubernetes.github.io/ingress-nginx",
+     "status": "deployed",
+     "timeout": 600,
+     "values": [
+      "controller:\n  replicaCount: 2\n  service:\n    type: LoadBalancer\n    annotations:\n      service.beta.kubernetes.io/aws-load-balancer-type: nlb\n  resources:\n    requests:\n      cpu: 100m\n      memory: 128Mi\n"
+     ],
+     "version": "4.10.1",
+     "wait": true
+    },
+    "after": {
+     "atomic": true,
+     "chart": "ingress-nginx",
+     "cleanup_on_fail": true,
+     "create_namespace": true,
+     "id": "ingress-nginx",
+     "name": "ingress-nginx",
+     "namespace": "ingress-nginx",
+     "repository": "https://kubernetes.github.io/ingress-nginx",
+     "status": "deployed",
+     "timeout": 600,
+     "values": [
+      "controller:\n  replicaCount: 3\n  service:\n    type: LoadBalancer\n    annotations:\n      service.beta.kubernetes.io/aws-load-balancer-type: nlb\n      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing\n  resources:\n    requests:\n      cpu: 200m\n      memory: 256Mi\n  metrics:\n    enabled: true\n"
+     ],
+     "version": "4.11.3",
+     "wait": true
+    },
+    "after_unknown": {
+     "metadata": true
+    },
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.legacy_queue.aws_sqs_queue.jobs",
+   "module_address": "module.legacy_queue",
+   "mode": "managed",
+   "type": "aws_sqs_queue",
+   "name": "jobs",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:sqs:us-east-1:123456789012:acme-legacy-jobs",
+     "content_based_deduplication": false,
+     "delay_seconds": 0,
+     "fifo_queue": false,
+     "id": "https://sqs.us-east-1.amazonaws.com/123456789012/acme-legacy-jobs",
+     "kms_master_key_id": null,
+     "max_message_size": 262144,
+     "message_retention_seconds": 1209600,
+     "name": "acme-legacy-jobs",
+     "receive_wait_time_seconds": 20,
+     "sqs_managed_sse_enabled": true,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "url": "https://sqs.us-east-1.amazonaws.com/123456789012/acme-legacy-jobs",
+     "visibility_timeout_seconds": 300,
+     "redrive_policy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:123456789012:acme-legacy-jobs-dlq\",\"maxReceiveCount\":5}"
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_no_resource_config"
+  },
+  {
+   "address": "module.legacy_queue.aws_sqs_queue.jobs_dlq",
+   "module_address": "module.legacy_queue",
+   "mode": "managed",
+   "type": "aws_sqs_queue",
+   "name": "jobs_dlq",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "delete"
+    ],
+    "before": {
+     "arn": "arn:aws:sqs:us-east-1:123456789012:acme-legacy-jobs-dlq",
+     "content_based_deduplication": false,
+     "delay_seconds": 0,
+     "fifo_queue": false,
+     "id": "https://sqs.us-east-1.amazonaws.com/123456789012/acme-legacy-jobs-dlq",
+     "kms_master_key_id": null,
+     "max_message_size": 262144,
+     "message_retention_seconds": 1209600,
+     "name": "acme-legacy-jobs-dlq",
+     "receive_wait_time_seconds": 20,
+     "sqs_managed_sse_enabled": true,
+     "tags": {},
+     "tags_all": {
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "url": "https://sqs.us-east-1.amazonaws.com/123456789012/acme-legacy-jobs-dlq",
+     "visibility_timeout_seconds": 300,
+     "redrive_policy": ""
+    },
+    "after": null,
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": false
+   },
+   "action_reason": "delete_because_no_resource_config"
+  },
+  {
+   "address": "module.vpc.aws_route_table_association.private[\"us-east-1c\"]",
+   "module_address": "module.vpc",
+   "mode": "managed",
+   "type": "aws_route_table_association",
+   "name": "private",
+   "index": "us-east-1c",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "gateway_id": null,
+     "route_table_id": "rtb-0f9e8d7c6b5a49382",
+     "timeouts": null
+    },
+    "after_unknown": {
+     "id": true,
+     "subnet_id": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.vpc.aws_subnet.private[\"us-east-1a\"]",
+   "module_address": "module.vpc",
+   "mode": "managed",
+   "type": "aws_subnet",
+   "name": "private",
+   "index": "us-east-1a",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "no-op"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-0aa1b2c3d4e5f6071",
+     "assign_ipv6_address_on_creation": false,
+     "availability_zone": "us-east-1a",
+     "availability_zone_id": "use1-az4",
+     "cidr_block": "10.20.1.0/24",
+     "id": "subnet-0aa1b2c3d4e5f6071",
+     "map_public_ip_on_launch": false,
+     "owner_id": "123456789012",
+     "tags": {
+      "Name": "acme-prod-private-us-east-1a",
+      "Tier": "private"
+     },
+     "tags_all": {
+      "Name": "acme-prod-private-us-east-1a",
+      "Tier": "private",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-0aa1b2c3d4e5f6071",
+     "assign_ipv6_address_on_creation": false,
+     "availability_zone": "us-east-1a",
+     "availability_zone_id": "use1-az4",
+     "cidr_block": "10.20.1.0/24",
+     "id": "subnet-0aa1b2c3d4e5f6071",
+     "map_public_ip_on_launch": false,
+     "owner_id": "123456789012",
+     "tags": {
+      "Name": "acme-prod-private-us-east-1a",
+      "Tier": "private"
+     },
+     "tags_all": {
+      "Name": "acme-prod-private-us-east-1a",
+      "Tier": "private",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.vpc.aws_subnet.private[\"us-east-1b\"]",
+   "module_address": "module.vpc",
+   "mode": "managed",
+   "type": "aws_subnet",
+   "name": "private",
+   "index": "us-east-1b",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "no-op"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-0bb2c3d4e5f607182",
+     "assign_ipv6_address_on_creation": false,
+     "availability_zone": "us-east-1b",
+     "availability_zone_id": "use1-az6",
+     "cidr_block": "10.20.2.0/24",
+     "id": "subnet-0bb2c3d4e5f607182",
+     "map_public_ip_on_launch": false,
+     "owner_id": "123456789012",
+     "tags": {
+      "Name": "acme-prod-private-us-east-1b",
+      "Tier": "private"
+     },
+     "tags_all": {
+      "Name": "acme-prod-private-us-east-1b",
+      "Tier": "private",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-0bb2c3d4e5f607182",
+     "assign_ipv6_address_on_creation": false,
+     "availability_zone": "us-east-1b",
+     "availability_zone_id": "use1-az6",
+     "cidr_block": "10.20.2.0/24",
+     "id": "subnet-0bb2c3d4e5f607182",
+     "map_public_ip_on_launch": false,
+     "owner_id": "123456789012",
+     "tags": {
+      "Name": "acme-prod-private-us-east-1b",
+      "Tier": "private"
+     },
+     "tags_all": {
+      "Name": "acme-prod-private-us-east-1b",
+      "Tier": "private",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.vpc.aws_subnet.private[\"us-east-1c\"]",
+   "module_address": "module.vpc",
+   "mode": "managed",
+   "type": "aws_subnet",
+   "name": "private",
+   "index": "us-east-1c",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "before": null,
+    "after": {
+     "assign_ipv6_address_on_creation": false,
+     "availability_zone": "us-east-1c",
+     "cidr_block": "10.20.3.0/24",
+     "map_public_ip_on_launch": false,
+     "tags": {
+      "Name": "acme-prod-private-us-east-1c",
+      "Tier": "private"
+     },
+     "tags_all": {
+      "Name": "acme-prod-private-us-east-1c",
+      "Tier": "private",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "vpc_id": "vpc-0c1d2e3f4a5b6c7d8"
+    },
+    "after_unknown": {
+     "arn": true,
+     "availability_zone_id": true,
+     "id": true,
+     "ipv6_cidr_block_association_id": true,
+     "owner_id": true
+    },
+    "before_sensitive": false,
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.vpc.aws_vpc.this[0]",
+   "module_address": "module.vpc",
+   "mode": "managed",
+   "type": "aws_vpc",
+   "name": "this",
+   "index": 0,
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:vpc/vpc-0c1d2e3f4a5b6c7d8",
+     "cidr_block": "10.20.0.0/16",
+     "enable_dns_hostnames": true,
+     "enable_dns_support": true,
+     "id": "vpc-0c1d2e3f4a5b6c7d8",
+     "instance_tenancy": "default",
+     "main_route_table_id": "rtb-0e1d2c3b4a5f69788",
+     "owner_id": "123456789012",
+     "tags": {
+      "Name": "acme-prod"
+     },
+     "tags_all": {
+      "Name": "acme-prod",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:vpc/vpc-0c1d2e3f4a5b6c7d8",
+     "cidr_block": "10.20.0.0/16",
+     "enable_dns_hostnames": true,
+     "enable_dns_support": true,
+     "id": "vpc-0c1d2e3f4a5b6c7d8",
+     "instance_tenancy": "default",
+     "main_route_table_id": "rtb-0e1d2c3b4a5f69788",
+     "owner_id": "123456789012",
+     "tags": {
+      "CostCenter": "infra-421",
+      "Name": "acme-prod"
+     },
+     "tags_all": {
+      "CostCenter": "infra-421",
+      "Name": "acme-prod",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     }
+    },
+    "after_unknown": {},
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.workers.aws_autoscaling_group.this",
+   "module_address": "module.workers",
+   "mode": "managed",
+   "type": "aws_autoscaling_group",
+   "name": "this",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:7e1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d:autoScalingGroupName/acme-prod-workers",
+     "availability_zones": [
+      "us-east-1a",
+      "us-east-1b"
+     ],
+     "capacity_rebalance": true,
+     "default_cooldown": 300,
+     "desired_capacity": 6,
+     "health_check_grace_period": 120,
+     "health_check_type": "EC2",
+     "id": "acme-prod-workers",
+     "launch_template": [
+      {
+       "id": "lt-0a9b8c7d6e5f40312",
+       "name": "acme-prod-workers",
+       "version": "7"
+      }
+     ],
+     "max_size": 12,
+     "min_size": 2,
+     "name": "acme-prod-workers",
+     "vpc_zone_identifier": [
+      "subnet-0aa1b2c3d4e5f6071",
+      "subnet-0bb2c3d4e5f607182"
+     ]
+    },
+    "after": {
+     "arn": "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:7e1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d:autoScalingGroupName/acme-prod-workers",
+     "availability_zones": [
+      "us-east-1a",
+      "us-east-1b"
+     ],
+     "capacity_rebalance": true,
+     "default_cooldown": 300,
+     "desired_capacity": 4,
+     "health_check_grace_period": 120,
+     "health_check_type": "EC2",
+     "id": "acme-prod-workers",
+     "launch_template": [
+      {
+       "id": "lt-0a9b8c7d6e5f40312",
+       "name": "acme-prod-workers"
+      }
+     ],
+     "max_size": 8,
+     "min_size": 2,
+     "name": "acme-prod-workers",
+     "vpc_zone_identifier": [
+      "subnet-0aa1b2c3d4e5f6071",
+      "subnet-0bb2c3d4e5f607182"
+     ]
+    },
+    "after_unknown": {
+     "launch_template": [
+      {
+       "version": true
+      }
+     ]
+    },
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "module.workers.aws_launch_template.this",
+   "module_address": "module.workers",
+   "mode": "managed",
+   "type": "aws_launch_template",
+   "name": "this",
+   "provider_name": "registry.terraform.io/hashicorp/aws",
+   "change": {
+    "actions": [
+     "update"
+    ],
+    "before": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:launch-template/lt-0a9b8c7d6e5f40312",
+     "default_version": 7,
+     "description": "Worker nodes",
+     "id": "lt-0a9b8c7d6e5f40312",
+     "image_id": "ami-0a5c3558529277641",
+     "instance_type": "c7g.xlarge",
+     "latest_version": 7,
+     "name": "acme-prod-workers",
+     "tags": {
+      "Role": "worker"
+     },
+     "tags_all": {
+      "Role": "worker",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "update_default_version": true,
+     "user_data": "IyEvYmluL2Jhc2gKc2V0IC1ldW8gcGlwZWZhaWwKZWNobyAiRUNTX0NMVVNURVI9YWNtZS1wcm9kLXdvcmtlcnMiID4+IC9ldGMvZWNzL2Vjcy5jb25maWcKZWNobyAiRUNTX0VOQUJMRV9DT05UQUlORVJfTUVUQURBVEE9dHJ1ZSIgPj4gL2V0Yy9lY3MvZWNzLmNvbmZpZwpzeXN0ZW1jdGwgZW5hYmxlIC0tbm93IGFtYXpvbi1zc20tYWdlbnQK",
+     "vpc_security_group_ids": [
+      "sg-0e5f60718293a4b5c"
+     ]
+    },
+    "after": {
+     "arn": "arn:aws:ec2:us-east-1:123456789012:launch-template/lt-0a9b8c7d6e5f40312",
+     "description": "Worker nodes",
+     "id": "lt-0a9b8c7d6e5f40312",
+     "image_id": "ami-0e2c8caa4b6378d8c",
+     "instance_type": "c7g.xlarge",
+     "name": "acme-prod-workers",
+     "tags": {
+      "Role": "worker"
+     },
+     "tags_all": {
+      "Role": "worker",
+      "ManagedBy": "terraform",
+      "Repository": "acme/infra-live"
+     },
+     "update_default_version": true,
+     "user_data": "IyEvYmluL2Jhc2gKc2V0IC1ldW8gcGlwZWZhaWwKZWNobyAiRUNTX0NMVVNURVI9YWNtZS1wcm9kLXdvcmtlcnMiID4+IC9ldGMvZWNzL2Vjcy5jb25maWcKZWNobyAiRUNTX0VOQUJMRV9DT05UQUlORVJfTUVUQURBVEE9dHJ1ZSIgPj4gL2V0Yy9lY3MvZWNzLmNvbmZpZwplY2hvICJFQ1NfRU5BQkxFX1NQT1RfSU5TVEFOQ0VfRFJBSU5JTkc9dHJ1ZSIgPj4gL2V0Yy9lY3MvZWNzLmNvbmZpZwpzeXN0ZW1jdGwgZW5hYmxlIC0tbm93IGFtYXpvbi1zc20tYWdlbnQKY3VybCAtZnNTTCBodHRwczovL2Rvd25sb2Fkcy5hY21lLmV4YW1wbGUvYWdlbnQvaW5zdGFsbC5zaCB8IGJhc2gK",
+     "vpc_security_group_ids": [
+      "sg-0e5f60718293a4b5c"
+     ]
+    },
+    "after_unknown": {
+     "default_version": true,
+     "latest_version": true
+    },
+    "before_sensitive": {},
+    "after_sensitive": {}
+   }
+  },
+  {
+   "address": "random_password.db",
+   "mode": "managed",
+   "type": "random_password",
+   "name": "db",
+   "provider_name": "registry.terraform.io/hashicorp/random",
+   "change": {
+    "actions": [
+     "no-op"
+    ],
+    "before": {
+     "bcrypt_hash": "$2a$10$demo.hash.value.not.real.000000000000000000000000000",
+     "id": "none",
+     "keepers": null,
+     "length": 32,
+     "lower": true,
+     "min_lower": 0,
+     "min_numeric": 0,
+     "min_special": 0,
+     "min_upper": 0,
+     "number": true,
+     "numeric": true,
+     "override_special": "!#%*-_=+",
+     "result": "correct-horse-battery-staple",
+     "special": true,
+     "upper": true
+    },
+    "after": {
+     "bcrypt_hash": "$2a$10$demo.hash.value.not.real.000000000000000000000000000",
+     "id": "none",
+     "keepers": null,
+     "length": 32,
+     "lower": true,
+     "min_lower": 0,
+     "min_numeric": 0,
+     "min_special": 0,
+     "min_upper": 0,
+     "number": true,
+     "numeric": true,
+     "override_special": "!#%*-_=+",
+     "result": "correct-horse-battery-staple",
+     "special": true,
+     "upper": true
+    },
+    "after_unknown": {},
+    "before_sensitive": {
+     "bcrypt_hash": true,
+     "result": true
+    },
+    "after_sensitive": {
+     "bcrypt_hash": true,
+     "result": true
+    }
+   }
+  }
+ ],
+ "configuration": {
+  "provider_config": {
+   "aws": {
+    "name": "aws",
+    "full_name": "registry.terraform.io/hashicorp/aws",
+    "expressions": {
+     "region": {
+      "constant_value": "us-east-1"
+     }
+    }
+   }
+  },
+  "root_module": {
+   "outputs": {
+    "db_endpoint": {
+     "expression": {
+      "references": [
+       "aws_db_instance.primary.endpoint",
+       "aws_db_instance.primary"
+      ]
+     }
+    },
+    "db_password": {
+     "sensitive": true,
+     "expression": {
+      "references": [
+       "random_password.db.result",
+       "random_password.db"
+      ]
+     }
+    },
+    "logs_bucket_arn": {
+     "expression": {
+      "references": [
+       "aws_s3_bucket.logs.arn",
+       "aws_s3_bucket.logs"
+      ]
+     }
+    },
+    "web_instance_ids": {
+     "expression": {
+      "references": [
+       "aws_instance.web"
+      ]
+     }
+    }
+   },
+   "resources": [
+    {
+     "address": "aws_cloudwatch_log_group.api",
+     "mode": "managed",
+     "type": "aws_cloudwatch_log_group",
+     "name": "api",
+     "provider_config_key": "aws",
+     "expressions": {
+      "name": {
+       "references": [
+        "aws_lambda_function.api.function_name",
+        "aws_lambda_function.api"
+       ]
+      },
+      "retention_in_days": {
+       "constant_value": 30
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_cloudwatch_metric_alarm.db_cpu",
+     "mode": "managed",
+     "type": "aws_cloudwatch_metric_alarm",
+     "name": "db_cpu",
+     "provider_config_key": "aws",
+     "expressions": {
+      "alarm_name": {
+       "constant_value": "acme-prod-db-cpu-high"
+      },
+      "dimensions": {
+       "references": [
+        "aws_db_instance.primary.identifier",
+        "aws_db_instance.primary"
+       ]
+      },
+      "threshold": {
+       "constant_value": 80
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_db_instance.primary",
+     "mode": "managed",
+     "type": "aws_db_instance",
+     "name": "primary",
+     "provider_config_key": "aws",
+     "expressions": {
+      "identifier": {
+       "constant_value": "acme-prod-db"
+      },
+      "kms_key_id": {
+       "references": [
+        "data.aws_kms_alias.rds.target_key_arn",
+        "data.aws_kms_alias.rds"
+       ]
+      },
+      "password": {
+       "references": [
+        "random_password.db.result",
+        "random_password.db"
+       ]
+      },
+      "storage_encrypted": {
+       "constant_value": true
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_iam_policy.deploy",
+     "mode": "managed",
+     "type": "aws_iam_policy",
+     "name": "deploy",
+     "provider_config_key": "aws",
+     "expressions": {
+      "name": {
+       "constant_value": "acme-deploy"
+      },
+      "policy": {
+       "references": [
+        "data.aws_iam_policy_document.deploy.json",
+        "data.aws_iam_policy_document.deploy"
+       ]
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_instance.web",
+     "mode": "managed",
+     "type": "aws_instance",
+     "name": "web",
+     "provider_config_key": "aws",
+     "expressions": {
+      "ami": {
+       "references": [
+        "data.aws_ami.web.id",
+        "data.aws_ami.web"
+       ]
+      },
+      "instance_type": {
+       "constant_value": "t3.large"
+      }
+     },
+     "schema_version": 0,
+     "count_expression": {
+      "constant_value": 2
+     }
+    },
+    {
+     "address": "aws_lambda_function.api",
+     "mode": "managed",
+     "type": "aws_lambda_function",
+     "name": "api",
+     "provider_config_key": "aws",
+     "expressions": {
+      "environment": [
+       {
+        "variables": {
+         "references": [
+          "aws_db_instance.primary.address",
+          "aws_db_instance.primary"
+         ]
+        }
+       }
+      ],
+      "function_name": {
+       "constant_value": "acme-core-api"
+      },
+      "memory_size": {
+       "constant_value": 1024
+      },
+      "timeout": {
+       "constant_value": 30
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_s3_bucket_versioning.logs",
+     "mode": "managed",
+     "type": "aws_s3_bucket_versioning",
+     "name": "logs",
+     "provider_config_key": "aws",
+     "expressions": {
+      "bucket": {
+       "references": [
+        "aws_s3_bucket.logs.id",
+        "aws_s3_bucket.logs"
+       ]
+      },
+      "versioning_configuration": [
+       {
+        "status": {
+         "constant_value": "Enabled"
+        }
+       }
+      ]
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "aws_security_group.web",
+     "mode": "managed",
+     "type": "aws_security_group",
+     "name": "web",
+     "provider_config_key": "aws",
+     "expressions": {
+      "name": {
+       "constant_value": "acme-prod-web"
+      }
+     },
+     "schema_version": 0
+    },
+    {
+     "address": "data.aws_instances.web",
+     "mode": "data",
+     "type": "aws_instances",
+     "name": "web",
+     "provider_config_key": "aws",
+     "expressions": {
+      "filter": [
+       {
+        "name": {
+         "constant_value": "tag:Role"
+        },
+        "values": {
+         "constant_value": [
+          "web"
+         ]
+        }
+       }
+      ]
+     },
+     "schema_version": 0,
+     "depends_on": [
+      "aws_instance.web"
+     ]
+    },
+    {
+     "address": "helm_release.ingress_nginx",
+     "mode": "managed",
+     "type": "helm_release",
+     "name": "ingress_nginx",
+     "provider_config_key": "helm",
+     "expressions": {
+      "values": {
+       "references": [
+        "local.ingress_values"
+       ]
+      },
+      "version": {
+       "constant_value": "4.11.3"
+      }
+     },
+     "schema_version": 0
+    }
+   ],
+   "module_calls": {
+    "vpc": {
+     "source": "terraform-aws-modules/vpc/aws",
+     "version_constraint": "~> 5.8",
+     "expressions": {},
+     "module": {
+      "resources": [
+       {
+        "address": "aws_route_table_association.private",
+        "mode": "managed",
+        "type": "aws_route_table_association",
+        "name": "private",
+        "provider_config_key": "aws",
+        "expressions": {
+         "route_table_id": {
+          "references": [
+           "aws_route_table.private.id",
+           "aws_route_table.private"
+          ]
+         },
+         "subnet_id": {
+          "references": [
+           "aws_subnet.private",
+           "aws_subnet.private"
+          ]
+         }
+        },
+        "schema_version": 0,
+        "for_each_expression": {
+         "references": [
+          "var.private_subnets"
+         ]
+        }
+       },
+       {
+        "address": "aws_subnet.private",
+        "mode": "managed",
+        "type": "aws_subnet",
+        "name": "private",
+        "provider_config_key": "aws",
+        "expressions": {
+         "cidr_block": {
+          "references": [
+           "each.value"
+          ]
+         }
+        },
+        "schema_version": 0,
+        "for_each_expression": {
+         "references": [
+          "var.private_subnets"
+         ]
+        }
+       }
+      ]
+     }
+    },
+    "workers": {
+     "source": "./modules/workers",
+     "expressions": {
+      "ami_id": {
+       "references": [
+        "data.aws_ami.web.id",
+        "data.aws_ami.web"
+       ]
+      },
+      "desired_capacity": {
+       "constant_value": 4
+      }
+     },
+     "module": {
+      "resources": [
+       {
+        "address": "aws_autoscaling_group.this",
+        "mode": "managed",
+        "type": "aws_autoscaling_group",
+        "name": "this",
+        "provider_config_key": "aws",
+        "expressions": {
+         "desired_capacity": {
+          "references": [
+           "var.desired_capacity"
+          ]
+         },
+         "launch_template": [
+          {
+           "version": {
+            "references": [
+             "aws_launch_template.this.latest_version",
+             "aws_launch_template.this"
+            ]
+           }
+          }
+         ]
+        },
+        "schema_version": 0
+       },
+       {
+        "address": "aws_launch_template.this",
+        "mode": "managed",
+        "type": "aws_launch_template",
+        "name": "this",
+        "provider_config_key": "aws",
+        "expressions": {
+         "image_id": {
+          "references": [
+           "var.ami_id"
+          ]
+         },
+         "user_data": {
+          "references": [
+           "local.user_data"
+          ]
+         }
+        },
+        "schema_version": 0
+       }
+      ]
+     }
+    }
+   }
+  }
+ },
+ "output_changes": {
+  "db_endpoint": {
+   "actions": [
+    "update"
+   ],
+   "before": "acme-prod-db.c9akciq32xyz.us-east-1.rds.amazonaws.com:5432",
+   "after_unknown": true,
+   "before_sensitive": false,
+   "after_sensitive": false
+  },
+  "db_password": {
+   "actions": [
+    "no-op"
+   ],
+   "before": "correct-horse-battery-staple",
+   "after": "correct-horse-battery-staple",
+   "after_unknown": false,
+   "before_sensitive": true,
+   "after_sensitive": true
+  },
+  "legacy_queue_url": {
+   "actions": [
+    "delete"
+   ],
+   "before": "https://sqs.us-east-1.amazonaws.com/123456789012/acme-legacy-jobs",
+   "after": null,
+   "after_unknown": false,
+   "before_sensitive": false,
+   "after_sensitive": false
+  },
+  "logs_bucket_arn": {
+   "actions": [
+    "create"
+   ],
+   "before": null,
+   "after_unknown": true,
+   "before_sensitive": false,
+   "after_sensitive": false
+  },
+  "web_instance_ids": {
+   "actions": [
+    "update"
+   ],
+   "before": [
+    "i-0f3a9c1e2b4d5a607",
+    "i-0b7e1d2c3a4f5e698",
+    "i-0c4d5e6f7a8b9c0d1"
+   ],
+   "after": [
+    null,
+    null
+   ],
+   "after_unknown": [
+    true,
+    true
+   ],
+   "before_sensitive": false,
+   "after_sensitive": false
+  }
+ },
+ "relevant_attributes": [
+  {
+   "resource": "aws_security_group.web",
+   "attribute": [
+    "ingress"
+   ]
+  },
+  {
+   "resource": "aws_db_instance.primary",
+   "attribute": [
+    "address"
+   ]
+  },
+  {
+   "resource": "aws_instance.web",
+   "attribute": [
+    "id"
+   ]
+  }
+ ]
+}

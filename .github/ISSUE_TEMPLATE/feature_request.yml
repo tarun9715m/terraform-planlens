@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest something planlens should show or do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The review question or workflow you need help with, for example "spot IAM policies that gain wildcard actions".
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: How planlens could show or solve it. Mock-ups and plan JSON excerpts are welcome.

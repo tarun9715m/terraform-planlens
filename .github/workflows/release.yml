@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Check the tag matches package.json
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - name: Pack
+        # The unversioned copy keeps .../releases/latest/download/terraform-planlens.tgz stable across releases.
+        run: |
+          npm pack
+          cp "terraform-planlens-${GITHUB_REF_NAME#v}.tgz" terraform-planlens.tgz
+      - name: Release notes from the changelog
+        run: node scripts/release-notes.mjs "$GITHUB_REF_NAME" > notes.md
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" terraform-planlens.tgz "terraform-planlens-${GITHUB_REF_NAME#v}.tgz" --title "planlens $GITHUB_REF_NAME" --notes-file notes.md

@@ -1,0 +1,62 @@
+{
+  "name": "terraform-planlens",
+  "version": "0.1.0",
+  "description": "See exactly what a Terraform or OpenTofu plan will create, change, replace and destroy, including what terraform plan hides.",
+  "keywords": [
+    "terraform",
+    "opentofu",
+    "terraform-plan",
+    "plan",
+    "diff",
+    "infrastructure-as-code",
+    "devops",
+    "cli",
+    "viewer"
+  ],
+  "homepage": "https://tarun9715m.github.io/terraform-planlens/",
+  "bugs": {
+    "url": "https://github.com/tarun9715m/terraform-planlens/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarun9715m/terraform-planlens.git"
+  },
+  "license": "MIT",
+  "author": "tarun9715m",
+  "type": "module",
+  "bin": {
+    "planlens": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build:ui": "vite build",
+    "build:cli": "tsup",
+    "build": "npm run build:ui && npm run build:cli",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build",
+    "fixtures": "bash scripts/gen-fixtures.sh",
+    "screenshots": "node scripts/screenshots.mjs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@types/node": "^26.6.4",
+    "puppeteer-core": "^25.12.0",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitepress": "^1.6.4",
+    "vitest": "^5.0.3"
+  }
+}
